@@ -85,7 +85,7 @@ app.controller('restaurant', ['$scope', '$http', function($scope, $http, $window
      }
 
      $scope.zoomto=function(index){
-        $scope.Map.setZoom(23);
+        $scope.Map.setZoom(17);
         var location = new google.maps.LatLng($scope.Markers[index].lat,$scope.Markers[index].lng)
         $scope.Map.panTo(location)
 
