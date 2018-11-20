@@ -2,6 +2,7 @@ var app = angular.module('AnnArborHub', []);
 
 app.controller('restaurant', ['$scope', '$http', function($scope, $http, $window) {
     var markers = []
+    $scope.results = [];
      $scope.toNews = function() {
         console.log("666666");
          window.location.href = "news.html";
@@ -40,7 +41,8 @@ app.controller('restaurant', ['$scope', '$http', function($scope, $http, $window
       }).then(function successCallback(response) {
         console.log(response)
         var restaurants = response.data.restaurants
-        for (i=0; i < 20; i++ ){
+        for (i=0; i < 10; i++ ){
+          $scope.results.push(response.data.restaurants[i]["restaurant"])
           markers.push({
             "title": restaurants[i]["restaurant"]["name"],
             "lat" : restaurants[i]["restaurant"]["location"]["latitude"],
