@@ -47,7 +47,7 @@ app.controller('restaurant', ['$scope', '$http', function($scope, $http, $window
             "title": restaurants[i]["restaurant"]["name"],
             "lat" : restaurants[i]["restaurant"]["location"]["latitude"],
             "lng" : restaurants[i]["restaurant"]["location"]["longitude"],
-            "description":"cuisines: " + restaurants[i]["restaurant"]["cuisines"]
+            "description":"Name: " +restaurants[i]["restaurant"]["name"] +"\n" +"Cuisines: " + restaurants[i]["restaurant"]["cuisines"]
           })
         }
         console.log(markers)
