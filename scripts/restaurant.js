@@ -83,4 +83,18 @@ app.controller('restaurant', ['$scope', '$http', function($scope, $http, $window
         alert(" This is a bad keyword attempt, please enter a none empty keyword");
       });
      }
+
+     $scope.zoomto=function(index){
+        $scope.Map.setZoom(23);
+        var location = new google.maps.LatLng($scope.Markers[index].lat,$scope.Markers[index].lng)
+        $scope.Map.panTo(location)
+
+
+     }
 }]);
+
+
+
+
+
+
