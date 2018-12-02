@@ -17,18 +17,23 @@ app.controller('newsController', ['$scope', '$http', function($scope, $http) {
     //     }
     // )
 
-    $scope.toRes = function() {
-        window.location.href = "restaurant.html";
-    };
+     $scope.toNews = function() {
+        console.log("666666");
+         window.location.href = "news.html";
+     };
 
-    $scope.toEvents = function() {
-        window.location.href = "events.html";
-    };
+     $scope.toRes = function() {
+         window.location.href = "restaurant.html";
+     };
 
-    $scope.toHome = function() {
+     $scope.toEvents = function() {
+         window.location.href = "events.html";
+     };
+
+     $scope.toHome = function() {
         console.log("666");
         window.location.href = "index.html";
-    };
+     };
 
 
     console.log($scope.newsData)

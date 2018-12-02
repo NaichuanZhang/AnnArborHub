@@ -105,9 +105,9 @@ app.controller('events', ['$scope', '$http', function($scope, $http, $window) {
          window.location.href = "restaurant.html";
      };
 
-     // $scope.toEvents = function() {
-     //     window.location.href = "events.html";
-     // };
+     $scope.toEvents = function() {
+         window.location.href = "events.html";
+     };
 
      $scope.toHome = function() {
         console.log("666");
