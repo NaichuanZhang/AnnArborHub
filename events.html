@@ -25,6 +25,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
     <script src="dist/ngclipboard.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.0.1/lodash.js" type="text/javascript"></script>
+    <script src="clipboard.js-master/dist/clipboard.min.js"></script>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCnjxigFvUJcXOe83mPfLcu4fSv7Ojxobk"></script>
     <script src="scripts/event.js"></script>
   </head>
@@ -70,6 +71,8 @@
                 <p> Address: {{res.venue.address}}   {{res.venue.extended_address}}</p>
                 <p> Time: {{res.datetime_local}}</p>
                 <a href={{res.url}}> Get Ticket Here</a>
+                <br>
+                <button id="{{$index}}" data-clipboard-text = '{{res.url}}' ng-click="share($index)">Share</button>
                 <br>
               </div>
             </div>
