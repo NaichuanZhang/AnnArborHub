@@ -3,6 +3,19 @@ var app = angular.module('AnnArborHub', []);
 app.controller('events', ['$scope', '$http', function($scope, $http, $window) {
 
     var markers = [];
+    $scope.share = function(index){
+      console.log("toEvents")
+      
+    var btn = document.getElementById(index);
+    console.log(btn)
+    var clipboard = new ClipboardJS(btn);
+    clipboard.on('success', function(e) {
+        console.log(e);
+    });
+    clipboard.on('error', function(e) {
+        console.log(e);
+    });
+    }
 
     $scope.MapOptions = {
         center: new google.maps.LatLng(42.2808256, -83.7430),
