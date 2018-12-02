@@ -24,8 +24,10 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.0.1/lodash.js" type="text/javascript"></script>
+    <script src="clipboard.js-master/dist/clipboard.min.js"></script>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCnjxigFvUJcXOe83mPfLcu4fSv7Ojxobk"></script>
     <script src="scripts/restaurant.js"></script>
+
   </head>
 
   <body ng-app = "AnnArborHub">
@@ -38,18 +40,6 @@
         <a class="navbar-brand" href="#" ng-click = "toHome()">Home</a>
       </div>
     </nav>
-
-    <!-- <header class="masthead text-center text-white">
-      <div class="masthead-content">
-        <div class="container">
-          <h1 class="masthead-heading mb-0">Restaurant Hub</h1>
-        </div>
-      </div>
-      <div class="bg-circle-1 bg-circle"></div>
-      <div class="bg-circle-2 bg-circle"></div>
-      <div class="bg-circle-3 bg-circle"></div>
-      <div class="bg-circle-4 bg-circle"></div>
-    </header> -->
 
     <br>
     <br>
@@ -64,7 +54,9 @@
 
           <p> Address: {{res.location.address}}</p> 
           <p> Cuisines: {{res.cuisines}}</p>
-          <a href={{res.menu_url}}> Menu</a>
+          <a ng-attr-id = "{{$index+'menu'}}" href={{res.menu_url}} value={{res.menu_url}} > Menu</a>
+          <br>
+          <button id="{{$index}}" data-clipboard-text = '{{res.menu_url}}' ng-click="share($index)">Share</button>
           <br>
         </div>
       </div>
@@ -96,3 +88,4 @@
   </body>
 
 </html>
+
